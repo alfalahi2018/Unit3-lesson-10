@@ -1,0 +1,166 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Unit 3 · Lesson 10 · Over to you! Unit review</title>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;700;800&family=Bangers&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#161616;--yel:#FFD93D;--pink:#FF4F9A;--cyan:#22C7E8;--lime:#9BE564;--paper:#fff}
+*{box-sizing:border-box}
+body{margin:0;min-height:100vh;font-family:'Baloo 2',system-ui,sans-serif;color:var(--ink);padding:14px;background-color:var(--yel);background-image:radial-gradient(#FF4F9A55 22%,transparent 24%),radial-gradient(#FF4F9A33 22%,transparent 24%);background-size:22px 22px;background-position:0 0,11px 11px;background-attachment:fixed;overflow-x:hidden}
+.wrap{position:relative;max-width:1040px;margin:0 auto;display:flex;flex-direction:column;gap:14px}
+button{font-family:inherit;cursor:pointer}button:focus-visible{outline:4px solid var(--ink);outline-offset:2px}
+.top{background:var(--paper);border:5px solid var(--ink);border-radius:8px;padding:12px 22px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px;box-shadow:8px 8px 0 var(--ink);position:relative}
+.top .tt{display:flex;gap:14px;align-items:center}
+.top small{color:var(--pink);font-weight:800;letter-spacing:2px}.top h1{margin:0;font-family:'Bangers','Baloo 2',cursive;font-weight:400;letter-spacing:2px;font-size:clamp(30px,5vw,48px);line-height:1}
+.badge{background:var(--cyan);border:4px solid var(--ink);border-radius:999px;padding:2px 16px;font-weight:800;font-size:20px;display:inline-flex;gap:8px;align-items:center;box-shadow:3px 3px 0 var(--ink)}
+.fl{position:relative;height:66px;margin:0 8px}
+.fl .trk{position:absolute;left:8px;right:30px;top:46px;border-top:6px dashed var(--ink)}
+.fl .st{position:absolute;top:38px;width:20px;height:20px;border-radius:50%;background:#fff;border:4px solid var(--ink);margin-left:-10px}.fl .st.on{background:var(--pink)}
+.fl .pl{position:absolute;top:0;transition:left .9s cubic-bezier(.5,1.4,.5,1);margin-left:-22px}
+.fl .fg{position:absolute;right:0;top:6px}
+.nav{display:flex;gap:8px;flex-wrap:wrap;align-items:center}.nav span{font-weight:800;background:#fff;border:3px solid var(--ink);border-radius:8px;padding:0 8px}
+.nav button{border:4px solid var(--ink);background:#fff;color:var(--ink);border-radius:6px;padding:4px 12px;font-size:16px;font-weight:800;box-shadow:4px 4px 0 var(--ink);transition:transform .12s}
+.nav button:hover{transform:translate(-2px,-2px)}.nav button.on{background:var(--pink);color:#fff;transform:translate(3px,3px);box-shadow:1px 1px 0 var(--ink)}
+.card{background:var(--paper);border:5px solid var(--ink);border-radius:8px;padding:clamp(16px,3vw,28px);display:flex;flex-direction:column;gap:14px;box-shadow:10px 10px 0 var(--ink);animation:pop .4s}
+.card h2{margin:0;font-family:'Bangers','Baloo 2',cursive;font-weight:400;letter-spacing:1.5px;font-size:clamp(24px,3.6vw,34px)}
+.meta{display:flex;justify-content:space-between;font-weight:800;font-size:18px;flex-wrap:wrap;gap:6px;padding-bottom:8px;border-bottom:5px solid var(--ink)}
+.q{font-size:clamp(22px,3.4vw,32px);font-weight:800;line-height:1.3}.q b{background:var(--yel);border:3px solid var(--ink);border-radius:6px;padding:0 6px}
+.cm{background:#FFF4B8;border:4px solid var(--ink);border-radius:14px 14px 14px 0;padding:12px 18px;font-size:clamp(17px,2.2vw,21px);line-height:1.5;position:relative}.cm b{background:var(--cyan);border:3px solid var(--ink);border-radius:6px;padding:0 8px;margin-right:6px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:12px}
+.o{display:flex;align-items:center;justify-content:center;gap:12px;border:4px solid var(--ink);background:#fff;color:var(--ink);border-radius:8px;padding:14px 18px;font-size:clamp(18px,2.6vw,24px);font-weight:800;box-shadow:5px 5px 0 var(--ink);transition:transform .1s}
+.grid .o:nth-child(4n+1){background:#FFE7F1}.grid .o:nth-child(4n+2){background:#DDF7FD}.grid .o:nth-child(4n+3){background:#F0FFD9}.grid .o:nth-child(4n+4){background:#FFF4B8}
+.o:hover:not(:disabled){transform:translate(-2px,-2px)}.o:active:not(:disabled){transform:translate(4px,4px);box-shadow:1px 1px 0 var(--ink)}
+.grid .o.ok,.o.ok{background:var(--lime);animation:pop .4s}.grid .o.bad,.o.bad{background:#FF8A8A;animation:shake .4s}.o.pk,.grid .o.pk{background:var(--yel)}.o:disabled{cursor:default}
+.ic{background:#fff;border-radius:8px;flex:none;border:3px solid var(--ink)}
+.fb{font-size:22px;font-weight:800;min-height:48px;display:flex;align-items:center;gap:10px}
+.seal{display:inline-flex;align-items:center;justify-content:center;min-width:68px;height:60px;background:var(--pink);color:#fff;border:4px solid var(--ink);font-family:'Bangers','Baloo 2',cursive;letter-spacing:1px;font-size:26px;animation:stampin .4s;padding:0 10px;text-align:center;line-height:1;flex:none;clip-path:polygon(50% 0,62% 14%,80% 6%,82% 24%,100% 30%,90% 46%,100% 62%,82% 68%,80% 90%,62% 84%,50% 100%,38% 84%,20% 90%,18% 68%,0 62%,10% 46%,0 30%,18% 24%,20% 6%,38% 14%)}.seal.no{background:#6c6c78;font-size:16px}
+.go{align-self:flex-end;background:var(--ink);color:#fff;border:0;border-radius:6px;padding:12px 30px;font-size:21px;font-weight:800;box-shadow:5px 5px 0 var(--pink)}
+.go.alt{background:var(--pink);box-shadow:5px 5px 0 var(--ink)}.go[disabled]{opacity:.35}.go:active{transform:translate(3px,3px)}
+.row{display:flex;gap:12px;align-items:center;justify-content:flex-end;flex-wrap:wrap}
+.box{background:#fff;border:4px dashed var(--ink);border-radius:8px;padding:12px 20px;font-size:clamp(18px,2.4vw,22px);line-height:1.8}.box b{background:var(--yel);border:2px solid var(--ink);border-radius:5px;padding:0 5px}
+.learn{background:#DDF7FD;border:4px solid var(--ink);border-radius:8px;padding:10px 18px;font-size:19px}
+.cz{display:grid;grid-template-columns:40px repeat(3,1fr);gap:8px;align-items:center}.cz .o{padding:6px 12px;justify-content:flex-start;border-color:transparent;box-shadow:none;background:transparent!important;font-size:clamp(17px,2.2vw,22px)}.cz .o.sel{border-color:var(--ink);background:#fff!important}
+.cz .o.ok{background:var(--lime)!important}.cz .o.bad{background:#FF8A8A!important}
+.dot{width:26px;height:16px;border:3px solid var(--ink);border-radius:50%;background:#fff;flex:none}.sel .dot{background:var(--ink)}
+.q2{font-size:clamp(19px,2.5vw,24px);font-weight:800;margin-top:4px}
+.ws{display:grid;grid-template-columns:repeat(12,1fr);gap:3px;max-width:560px;align-self:center;width:100%;user-select:none}
+.ws button{aspect-ratio:1;border:2px solid var(--ink);background:#fff;font-size:clamp(14px,2.6vw,22px);font-weight:800;color:var(--ink);border-radius:5px;padding:0}.ws button.f{background:var(--lime)}.ws button.s{background:var(--yel);outline:3px solid var(--pink)}
+.wl{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:8px}.wl div{border:3px solid var(--ink);border-radius:8px;padding:4px 8px;display:flex;gap:8px;align-items:center;font-weight:800;font-size:17px;background:#fff}.wl .on{background:var(--lime)}
+.credit{text-align:right;font-size:15px;font-weight:800;background:#fff;border:3px solid var(--ink);border-radius:8px;padding:0 8px;align-self:flex-end}
+.big-stamp{align-self:center;font-family:'Bangers','Baloo 2',cursive;font-size:clamp(44px,7vw,72px);color:var(--pink);-webkit-text-stroke:3px var(--ink);transform:rotate(-4deg);animation:stampin .5s;letter-spacing:2px}
+@keyframes pop{0%{transform:scale(.96);opacity:.4}100%{transform:scale(1);opacity:1}}
+@keyframes shake{0%,100%{transform:translateX(0)}25%{transform:translateX(-7px)}75%{transform:translateX(7px)}}
+@keyframes stampin{0%{transform:scale(2.2) rotate(-14deg);opacity:0}100%{transform:scale(1) rotate(-4deg);opacity:1}}
+</style></head><body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+<symbol id="i-suitcase" viewBox="0 0 64 64"><rect x="10" y="20" width="44" height="32" rx="5" fill="#E8553D"/><path d="M24 20v-6h16v6" fill="none" stroke="#0F2A43" stroke-width="3"/><rect x="18" y="20" width="4" height="32" fill="#B93A26"/><rect x="42" y="20" width="4" height="32" fill="#B93A26"/></symbol>
+<symbol id="i-passport" viewBox="0 0 64 64"><rect x="16" y="8" width="32" height="48" rx="4" fill="#12457A"/><circle cx="32" cy="27" r="9" fill="none" stroke="#F5B700" stroke-width="2.5"/><path d="M23 27h18M32 18v18" stroke="#F5B700" stroke-width="2"/><rect x="22" y="43" width="20" height="4" rx="2" fill="#F5B700"/></symbol>
+<symbol id="i-guidebook" viewBox="0 0 64 64"><rect x="12" y="10" width="40" height="44" rx="4" fill="#12A594"/><rect x="18" y="16" width="28" height="22" rx="2" fill="#FFF8EC"/><path d="M32 34c-6-7-6-12 0-12s6 5 0 12z" fill="#E8553D"/><rect x="18" y="43" width="22" height="3" fill="#FFF8EC"/></symbol>
+<symbol id="i-flip-flops" viewBox="0 0 64 64"><ellipse cx="22" cy="34" rx="9" ry="20" fill="#F5B700"/><ellipse cx="42" cy="34" rx="9" ry="20" fill="#F5B700"/><path d="M22 22v10M22 32l-6 6M22 32l6 6M42 22v10M42 32l-6 6M42 32l6 6" stroke="#E8553D" stroke-width="3" fill="none" stroke-linecap="round"/></symbol>
+<symbol id="i-raincoat" viewBox="0 0 64 64"><path d="M20 14c4-6 20-6 24 0l10 12-6 4v24H16V30l-6-4z" fill="#F5B700"/><path d="M24 14c4 6 12 6 16 0" fill="none" stroke="#0F2A43" stroke-width="2.5"/><path d="M32 22v34" stroke="#0F2A43" stroke-width="2.5"/></symbol>
+<symbol id="i-toothbrush" viewBox="0 0 64 64"><path d="M10 52L38 28" stroke="#12A594" stroke-width="8" stroke-linecap="round"/><path d="M40 26l12-10" stroke="#9FD8FF" stroke-width="10" stroke-linecap="round"/><path d="M44 12l6 6M50 8l6 6" stroke="#E8553D" stroke-width="3" stroke-linecap="round"/></symbol>
+<symbol id="i-washbag" viewBox="0 0 64 64"><path d="M22 24c0-10 20-10 20 0" fill="none" stroke="#0F2A43" stroke-width="3"/><rect x="8" y="22" width="48" height="30" rx="12" fill="#9FD8FF" stroke="#0F2A43" stroke-width="2.5"/><path d="M14 32h36" stroke="#0F2A43" stroke-width="3" stroke-dasharray="4 3"/><rect x="28" y="28" width="8" height="8" rx="2" fill="#E8553D"/></symbol>
+<symbol id="i-charger" viewBox="0 0 64 64"><rect x="24" y="4" width="4" height="10" fill="#E8553D"/><rect x="36" y="4" width="4" height="10" fill="#E8553D"/><rect x="20" y="14" width="24" height="22" rx="5" fill="#0F2A43"/><path d="M32 36v10c0 8 12 6 12 14" stroke="#0F2A43" stroke-width="4" fill="none" stroke-linecap="round"/></symbol>
+<symbol id="i-soap" viewBox="0 0 64 64"><rect x="8" y="28" width="38" height="24" rx="10" fill="#F5B700"/><circle cx="50" cy="18" r="6" fill="none" stroke="#12A594" stroke-width="2.5"/><circle cx="40" cy="12" r="4" fill="none" stroke="#12A594" stroke-width="2.5"/><circle cx="55" cy="34" r="3" fill="none" stroke="#12A594" stroke-width="2.5"/></symbol>
+<symbol id="i-pillow" viewBox="0 0 64 64"><path d="M10 18c14-6 30-6 44 0 4 14 4 14 0 28-14 6-30 6-44 0-4-14-4-14 0-28z" fill="#9FD8FF" stroke="#0F2A43" stroke-width="2.5"/><path d="M18 24l4 4M46 24l-4 4M18 42l4-4M46 42l-4-4" stroke="#0F2A43" stroke-width="2.5" stroke-linecap="round"/></symbol>
+<symbol id="i-umbrella" viewBox="0 0 64 64"><path d="M6 32C8 10 56 10 58 32c-5-5-9-5-13 0-4-5-9-5-13 0-4-5-9-5-13 0-4-5-9-5-13 0z" fill="#E8553D"/><path d="M32 30v20c0 6-8 6-8 1" stroke="#0F2A43" stroke-width="3.5" fill="none" stroke-linecap="round"/></symbol>
+<symbol id="i-medicine" viewBox="0 0 64 64"><rect x="18" y="22" width="28" height="34" rx="6" fill="#12A594"/><rect x="22" y="12" width="20" height="10" rx="3" fill="#0F2A43"/><rect x="22" y="32" width="20" height="14" rx="2" fill="#FFF8EC"/><path d="M32 34v10M27 39h10" stroke="#E8553D" stroke-width="3"/></symbol>
+<symbol id="i-train" viewBox="0 0 64 64"><rect x="12" y="10" width="40" height="38" rx="8" fill="#E8553D"/><rect x="18" y="16" width="12" height="12" rx="2" fill="#FFF8EC"/><rect x="34" y="16" width="12" height="12" rx="2" fill="#FFF8EC"/><rect x="20" y="36" width="24" height="5" rx="2" fill="#F5B700"/><circle cx="22" cy="54" r="5" fill="#0F2A43"/><circle cx="42" cy="54" r="5" fill="#0F2A43"/></symbol>
+<symbol id="i-bus" viewBox="0 0 64 64"><rect x="6" y="14" width="52" height="34" rx="7" fill="#F5B700"/><rect x="11" y="19" width="12" height="10" fill="#FFF8EC"/><rect x="26" y="19" width="12" height="10" fill="#FFF8EC"/><rect x="41" y="19" width="12" height="10" fill="#FFF8EC"/><circle cx="18" cy="50" r="6" fill="#0F2A43"/><circle cx="46" cy="50" r="6" fill="#0F2A43"/></symbol>
+<symbol id="i-takeoff" viewBox="0 0 64 64"><path d="M6 54h52" stroke="#0F2A43" stroke-width="3"/><path d="M10 46L48 12 46 26 58 22 40 42 32 40z" fill="#12A594"/></symbol>
+<symbol id="i-land" viewBox="0 0 64 64"><path d="M6 54h52" stroke="#0F2A43" stroke-width="3"/><path d="M10 10L50 36 38 40 34 50 24 32z" fill="#12457A"/></symbol>
+<symbol id="i-seat" viewBox="0 0 64 64"><rect x="14" y="8" width="14" height="40" rx="5" fill="#E8553D"/><rect x="14" y="36" width="36" height="14" rx="5" fill="#E8553D"/><rect x="18" y="50" width="4" height="8" fill="#0F2A43"/><rect x="42" y="50" width="4" height="8" fill="#0F2A43"/></symbol>
+<symbol id="i-journey" viewBox="0 0 64 64"><path d="M10 58C10 40 54 44 54 28S18 20 28 8" fill="none" stroke="#0F2A43" stroke-width="6"/><path d="M10 58C10 40 54 44 54 28S18 20 28 8" fill="none" stroke="#F5B700" stroke-width="2" stroke-dasharray="5 4"/><path d="M28 8V2l10 3-10 3" fill="#E8553D"/></symbol>
+<symbol id="i-geton" viewBox="0 0 64 64"><rect x="30" y="8" width="26" height="46" rx="3" fill="#9FD8FF"/><path d="M4 32h30" stroke="#E8553D" stroke-width="5"/><path d="M26 22l10 10-10 10" fill="none" stroke="#E8553D" stroke-width="5"/></symbol>
+<symbol id="i-getoff" viewBox="0 0 64 64"><rect x="8" y="8" width="26" height="46" rx="3" fill="#9FD8FF"/><path d="M28 32h30" stroke="#12A594" stroke-width="5"/><path d="M50 22l10 10-10 10" fill="none" stroke="#12A594" stroke-width="5"/></symbol>
+<symbol id="i-arrive" viewBox="0 0 64 64"><path d="M6 54h52" stroke="#0F2A43" stroke-width="3"/><path d="M32 52V10" stroke="#0F2A43" stroke-width="4"/><path d="M32 10h20l-6 8 6 8H32z" fill="#E8553D"/></symbol>
+<symbol id="i-leave" viewBox="0 0 64 64"><circle cx="20" cy="16" r="8" fill="#F5B700"/><path d="M20 26v16M20 32l-10 8M20 32l10 6M20 42l-8 14M20 42l8 14" stroke="#0F2A43" stroke-width="4" stroke-linecap="round" fill="none"/><path d="M38 30h18M48 22l8 8-8 8" fill="none" stroke="#E8553D" stroke-width="5"/></symbol>
+<symbol id="i-explore" viewBox="0 0 64 64"><circle cx="32" cy="32" r="24" fill="#fff" stroke="#0F2A43" stroke-width="4"/><path d="M32 12l8 20h-16z" fill="#E8553D"/><path d="M32 52l-8-20h16z" fill="#12A594"/></symbol>
+</defs></svg>
+<div class="wrap">
+<div class="top"><div class="tt"><svg width="86" height="74" viewBox="0 0 86 74" aria-hidden="true"><path d="M43 2l9 16 17-8 1 18 17 6-12 14 8 16-18 1-4 18-18-10-18 10-4-18-18-1 8-16L-2 34l17-6 1-18 17 8z" transform="translate(2 0) scale(.96)" fill="#FF4F9A" stroke="#161616" stroke-width="3.5" stroke-linejoin="round"/><text x="43" y="43" text-anchor="middle" font-family="Bangers,cursive" font-size="24" fill="#fff" stroke="#161616" stroke-width="1.5">WOW!</text></svg><div><small>WOW! MAGAZINE · UNIT 3 · TRAVEL · LESSON 10</small><h1>Over to You! Unit Review</h1></div></div><div style="text-align:right"><span class="badge"><svg width="26" height="26" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3 7 7.5.6-5.7 5 1.8 7.4L12 18l-6.6 4 1.8-7.4-5.7-5L9 9z" fill="#FFD93D" stroke="#161616" stroke-width="1.8" stroke-linejoin="round"/></svg><span id="stars"></span> WOW stars</span><br><small style="letter-spacing:0;font-weight:800">Review time: 25 minutes</small></div></div>
+<div class="fl"><div class="trk"></div><div id="stations"></div><span class="pl" id="pl"><svg width="46" height="56" viewBox="0 0 46 56" aria-hidden="true"><rect x="6" y="12" width="34" height="40" rx="10" fill="#22C7E8" stroke="#161616" stroke-width="3.5"/><path d="M14 12a9 9 0 0 1 18 0" fill="none" stroke="#161616" stroke-width="3.5"/><rect x="12" y="30" width="22" height="14" rx="4" fill="#FFD93D" stroke="#161616" stroke-width="3"/><circle cx="23" cy="20" r="3" fill="#161616"/></svg></span><span class="fg"><svg width="34" height="44" viewBox="0 0 34 44" aria-hidden="true"><path d="M6 42V4" stroke="#161616" stroke-width="4"/><path d="M6 5h24l-6 8 6 8H6z" fill="#FF4F9A" stroke="#161616" stroke-width="3" stroke-linejoin="round"/></svg></span></div>
+<div class="nav" id="nav"></div>
+<div id="main"></div>
+<div class="credit">Created by T.Badria Alfalahi</div>
+</div>
+<script>
+const SYM={'take off':'takeoff','get on':'geton','get off':'getoff','catch a bus':'bus','land':'land'};
+const ic=(k,s=56)=>'<svg class="ic" width="'+s+'" height="'+s+'" viewBox="0 0 64 64" aria-hidden="true"><use href="#i-'+k+'"/></svg>';
+const N=a=>a.map(t=>({t}));
+const GRID=["SUITCASESIHN", "PILLOWIMOWRK", "SFCTEHRETSTW", "WCGAIGGDOPRT", "ACAOIOPIOOER", "HBBCBFKCTLGO", "MSHNUECIHFRP", "MESIPLSNBPAS", "UEAAUBAERIHS", "RMWRKBASULCA", "WCRCKLECSFCP", "PTMBELMCHRCO"];
+const WW=[['toothbrush','toothbrush'],['passport','passport'],['flipflops','flip-flops'],['charger','charger'],['suitcase','suitcase'],['medicines','medicine'],['pillow','pillow'],['washbag','washbag'],['raincoat','raincoat']];
+const R1=[['suitcase',['pillow','suitcase','soap'],1],['take off',['takeoff','land','arrive'],0],['passport',['passport','umbrella','charger'],0],['catch a bus',['train','bus','geton'],1],['get off',['geton','getoff','leave'],1],['raincoat',['raincoat','toothbrush','flip-flops'],0]].map(r=>({w:r[0],pr:'Race! Listen and tap the picture.',pics:1,o:r[1].map(t=>({t,p:t})),a:r[2]}));
+const CM=[['Rowan','I’m going to a different country for the first time next month. Last week, I got a new passport! It has my photo in it. I’m looking forward to using it at the airport!'],['Aseel','This is my aunt and uncle’s house by the sea. We’re going to stay there this summer. It’s a long journey so I’m going to take my pillow and sleep all the way in the car.'],['Amber','In the holidays we’re going to fly to Italy. We’re going to travel by plane. We take off on Friday after we finish school and land that evening. We’re going to stay in a hotel with a swimming pool. I’m going to take my flip-flops and my sunglasses.'],['Hussain','I love travelling by train. I’d like to go on a long train journey like the Trans-Siberian Railway. You get on in one continent and get off in another one. I’d like to go to sleep in a little bed on the train and wake up in a new place. What an adventure!'],['Dana','I don’t think the story about the holiday on the Moon is science fiction. You can’t pack your suitcases and catch a rocket to the Moon yet, but you can already buy a ticket for a journey into space. The tickets are very expensive!']];
+const YN=N(['Yes','No']);
+const A=[
+{n:'1 · Flashcard race',min:3,type:'mc',q:R1},
+{n:'2 · WOW! Magazine',min:4,type:'mc',cm:1,q:CM.map((c,i)=>({pr:'Is <b>'+c[0]+'</b> going on a trip?',o:YN,a:i<3?0:1,c:i,ex:i<3?'Yes: the plans are for a real trip.':i===3?'No: Hussain would like to go on a train journey one day.':'No: Dana is talking about the Moon story.'}))},
+{n:'3 · Word search',min:5,type:'ws'},
+{n:'4 · Travel phrases',min:2,type:'mc',q:[
+{pr:'pack ___',o:N(['your suitcase','a bus','home']),a:0},
+{pr:'go on ___',o:N(['a journey','by train','a city']),a:0},
+{pr:'travel ___',o:N(['home','by train','your suitcase']),a:1},
+{pr:'catch ___',o:N(['a city','a journey','a bus']),a:2},
+{pr:'arrive ___',o:N(['home','a bus','your suitcase']),a:0},
+{pr:'explore ___',o:N(['a journey','a city','home']),a:1}]},
+{n:'5 · Going to or will?',min:3,type:'mc',q:[
+{pr:'I ___ see a show with my friend this summer. We won free tickets.',o:N(['’ll','’m going to','won’t']),a:1},
+{pr:'If there’s a problem during the trip, I ___ call my parents.',o:N(['will','am going to','aren’t going to']),a:0},
+{pr:'We ___ visit the museum today because we won’t have time.',o:N(['will','are going to','aren’t going to']),a:2},
+{pr:'My friend ___ be happy if I forget to phone him.',o:N(['won’t','is going to','isn’t going to']),a:0},
+{pr:'Tasneem ___ play basketball. She’s wearing her trainers.',o:N(['will','is going to','won’t']),a:1}]},
+{n:'6 · My school day',min:2,type:'mc',q:[
+{pr:'I ___ at school at 8.40.',o:N(['arrive','arrives','arriving']),a:0},
+{pr:'Lessons ___ at 8.45.',o:N(['starts','start','starting']),a:1},
+{pr:'We ___ a break at 10 o’clock.',o:N(['has','having','have']),a:2},
+{pr:'We ___ lunch at 12.',o:N(['eat','eats','eating']),a:0},
+{pr:'School ___ at 1.30.',o:N(['finish','finishes','finishing']),a:1}]},
+{n:'7 · My Unit 3 diary',min:3,type:'diary'},
+{n:'8 · Final task',min:3,type:'cloze'}];
+const CL=7;
+const DQ=[['1 How was your work in this unit?',['OK','Good','Excellent']],['2 Which lesson was your favourite?',['Holiday equipment','Team Talk','going to and will','Book Club','Famous railways','Writing an email']],['3 Which parts were difficult for you?',['Vocabulary','Grammar','Listening','Reading','Writing']],['4 What new things can you talk about now?',['Travel items and plans','Trains and railways','School trips','Feelings about the future']],['5 How can you learn better in the next unit?',['Practise every day','Ask more questions','Work in a team']]];
+const C={t:'In Unit 3, we learned words for {0} (1) like a suitcase and a passport. We use {1} (2) for plans we have already decided and {2} (3) for quick decisions. We use the Present simple for {3} (4). On the Trans-Siberian railway, you get on in Europe and get {4} (5) in Asia.',o:[['school lessons','holiday equipment','sports'],['must','will','going to'],['will','going to','must'],['pizza','emails','timetables'],['off','on','up']],a:[1,2,0,2,0]};
+const nst=()=>({i:0,pk:null,sc:0,done:false,ans:{},chk:false,sel:null,fd:{},dq:{}});
+let S={step:0,st:A.map(nst)};
+let ac;function tone(f,d,ty){try{ac=ac||new(window.AudioContext||window.webkitAudioContext)();f.forEach((hz,i)=>{const o=ac.createOscillator(),g=ac.createGain();o.type=ty||'sine';o.frequency.value=hz;const t=ac.currentTime+i*d;g.gain.setValueAtTime(.18,t);g.gain.exponentialRampToValueAtTime(.001,t+d);o.connect(g);g.connect(ac.destination);o.start(t);o.stop(t+d)})}catch(e){}}
+function say(t){try{speechSynthesis.cancel();const u=new SpeechSynthesisUtterance(t);u.lang='en-GB';u.rate=.85;speechSynthesis.speak(u)}catch(e){}}
+const GOOD=()=>tone([523,659,784,1047],.1,'triangle'),BAD=()=>tone([220,160],.2,'sawtooth');
+function go(k){tone([523,659],.1);try{speechSynthesis.cancel()}catch(e){}S.step=k;render()}
+function lis(){say(A[S.step].q[S.st[S.step].i].w)}
+function rd(){say(CM[A[S.step].q[S.st[S.step].i].c][1])}
+function pick(i){const s=S.st[S.step],q=A[S.step].q[s.i];if(s.pk!==null)return;s.pk=i;if(i===q.a){s.sc++;GOOD()}else BAD();if(q.w)say(q.w);render()}
+function nxt(){const s=S.st[S.step],a=A[S.step];if(s.pk===null)return;if(s.i+1<a.q.length){s.i++;s.pk=null}else{s.done=true;tone([523,659,784,1047],.14,'triangle')}render()}
+function retry(){S.st[S.step]=nst();tone([440,523],.1);render()}
+function wsel(i){const s=S.st[2],n=12;if(s.sel===null){s.sel=i;tone([600],.06);render();return}
+ const a=s.sel,b=i;s.sel=null;const r1=Math.floor(a/n),c1=a%n,r2=Math.floor(b/n),c2=b%n,dr=r2-r1,dc=c2-c1;
+ if(a!==b&&(dr===0||dc===0||Math.abs(dr)===Math.abs(dc))){const L=Math.max(Math.abs(dr),Math.abs(dc))+1,sr=Math.sign(dr),sc=Math.sign(dc);let w='',cells=[];for(let k=0;k<L;k++){const r=r1+sr*k,c=c1+sc*k;w+=GRID[r][c];cells.push(r*n+c)}
+  const lw=w.toLowerCase(),rw=lw.split('').reverse().join('');const hit=WW.find(x=>(x[0]===lw||x[0]===rw)&&!s.fd[x[0]]);
+  if(hit){s.fd[hit[0]]=cells;s.sc=Object.keys(s.fd).length;GOOD();say(hit[1]);render();return}}
+ BAD();render()}
+function dq(q,i){const s=S.st[6];s.dq[q]=i;s.sc=Object.keys(s.dq).length===5?1:0;tone([660],.08);render()}
+function cl(g,i){const s=S.st[CL];if(s.chk)return;s.ans[g]=i;tone([660],.08);render()}
+function chk(){const s=S.st[CL];if(Object.keys(s.ans).length<5){tone([220],.15,'square');return}s.chk=true;const n=C.a.filter((a,g)=>s.ans[g]===a).length;tone(n>=4?[523,659,784,1047]:[392,330,262],.14,'triangle');render()}
+function stars(){const s=S.st;return s.slice(0,CL).reduce((x,y)=>x+y.sc,0)+(s[CL].chk?C.a.filter((a,g)=>s[CL].ans[g]===a).length:0)}
+function mc(a,s){
+ const q=a.q[s.i],n=a.q.length,lk=s.pk!==null,ok=lk&&s.pk===q.a;
+ if(s.done)return '<div class="card"><h2>'+a.n+'</h2><div class="big-stamp">'+s.sc+' / '+n+'</div><div class="fb" style="justify-content:center">'+(s.sc===n?'WOW! Perfect score!':s.sc>=n-1?'Well done!':'Good try! Play again.')+'</div><div class="row"><button class="go alt" onclick="retry()">Play again</button>'+(S.step<CL?'<button class="go" onclick="go('+(S.step+1)+')">Next page →</button>':'')+'</div></div>';
+ const pr=q.pr.replace('___',lk?'<b>'+q.o[q.a].t+'</b>':'______');
+ const lb=q.pics?'<div class="row" style="justify-content:center"><button class="go alt" onclick="lis()">▶ Listen</button></div>':'';
+ const cm=a.cm?'<div class="cm"><b>'+CM[q.c][0]+'</b>'+CM[q.c][1]+'</div><div class="row" style="justify-content:flex-start"><button class="go alt" style="padding:6px 20px;font-size:17px" onclick="rd()">▶ Listen</button></div>':'';
+ return '<div class="card"><div class="meta"><span>'+a.n+' · '+a.min+' min</span><span>Question '+(s.i+1)+' / '+n+' · WOW: '+s.sc+'</span></div>'+cm+'<div class="q">'+pr+'</div>'+lb+'<div class="grid">'+q.o.map((o,i)=>'<button class="o'+(lk&&i===q.a?' ok':lk&&i===s.pk?' bad':'')+'" '+(lk?'disabled':'')+' onclick="pick('+i+')">'+(q.pics?ic(o.p,90):'<span>'+o.t+'</span>')+'</button>').join('')+'</div><div class="fb">'+(lk?'<span class="seal'+(ok?'':' no')+'">'+(ok?'WOW!':'OOPS')+'</span><span>The answer is: '+(q.w||q.o[q.a].t)+'. '+(q.ex||'')+'</span>':'Choose the correct answer.')+'</div><button class="go" onclick="nxt()" '+(lk?'':'disabled')+'>'+(s.i+1===n?'Finish':'Next →')+'</button></div>'}
+function view(){
+ const a=A[S.step],s=S.st[S.step];
+ if(a.type==='mc')return mc(a,s);
+ if(a.type==='ws'){const fc={};Object.values(s.fd).forEach(c=>c.forEach(x=>fc[x]=1));const all=Object.keys(s.fd).length===9;return '<div class="card"><div class="meta"><span>'+a.n+' · '+a.min+' min</span><span>Found: '+s.sc+' / 9</span></div><div class="learn">Find nine words for travel items. Tap the <b>first letter</b>, then the <b>last letter</b>. Words can go across, down, up or backwards.</div><div class="ws">'+GRID.join('').split('').map((ch,i)=>'<button class="'+(fc[i]?'f':s.sel===i?'s':'')+'" onclick="wsel('+i+')" aria-label="'+ch+'">'+ch+'</button>').join('')+'</div><div class="wl">'+WW.map(w=>'<div class="'+(s.fd[w[0]]?'on':'')+'">'+ic(w[1],36)+'<span>'+(s.fd[w[0]]?w[1]:'? ? ?')+'</span></div>').join('')+'</div><div class="fb">'+(all?'<span class="seal">WOW!</span>You found all nine words!':'')+'</div><div class="row"><button class="go alt" onclick="retry()">Start again</button><button class="go" onclick="go(3)">Travel phrases →</button></div></div>'}
+ if(a.type==='diary'){const all=Object.keys(s.dq).length===5;return '<div class="card"><div class="meta"><span>'+a.n+' · '+a.min+' min</span><span>WOW: '+s.sc+'</span></div><div class="learn"><b>Self-assessment:</b> Answer the questions about your work in Unit 3.</div>'+DQ.map((q,k)=>'<div><div class="q2">'+q[0]+'</div><div class="grid" style="grid-template-columns:repeat(auto-fit,minmax(170px,1fr));margin-top:6px">'+q[1].map((x,i)=>'<button class="o'+(s.dq[k]===i?' pk':'')+'" style="padding:8px 12px;font-size:clamp(16px,2.2vw,20px)" onclick="dq('+k+','+i+')"><span>'+x+'</span></button>').join('')+'</div></div>').join('')+(all?'<div class="box"><b>My Unit 3 diary</b><br>My work was <b>'+DQ[0][1][s.dq[0]]+'</b>. My favourite lesson was <b>'+DQ[1][1][s.dq[1]]+'</b>. The difficult part was <b>'+DQ[2][1][s.dq[2]].toLowerCase()+'</b>. Now I can talk about <b>'+DQ[3][1][s.dq[3]].toLowerCase()+'</b>. Next time, I will <b>'+DQ[4][1][s.dq[4]].toLowerCase()+'</b>.</div><button class="go alt" onclick="go(7)">Final task →</button>':'')+'</div>'}
+ const g=i=>'<b>'+(s.ans[i]===undefined?'______':C.o[i][s.ans[i]])+'</b>',n=C.a.filter((x,i)=>s.ans[i]===x).length;
+ return '<div class="card"><div class="meta"><span>Finishing the lesson · Unit 3 review</span><b>(5 marks)</b></div><div style="font-style:italic;font-size:18px">For each item, shade in the bubble next to the correct option.</div><div class="box">'+C.t.replace(/\{(\d)\}/g,(m,i)=>g(+i))+'</div>'+C.o.map((os,gi)=>'<div class="cz"><b>'+(gi+1)+')</b>'+os.map((w,i)=>{const sel=s.ans[gi]===i,cls=s.chk&&i===C.a[gi]?' ok':s.chk&&sel?' bad':'';return '<button class="o'+(sel?' sel':'')+cls+'" onclick="cl('+gi+','+i+')"><span class="dot"></span>'+w+'</button>'}).join('')+'</div>').join('')+(s.chk?'<div class="big-stamp">'+n+' / 5</div>':'')+'<div class="row"><span style="margin-right:auto;font-size:20px;font-weight:800">'+(s.chk?(n===5?'WOW! You finished Unit 3 like a star!':'Review: '+C.a.map((x,i)=>s.ans[i]!==x?C.o[i][x]:null).filter(Boolean).join(', ')):'Answer all 5 items, then press Check.')+'</span><button class="go alt" onclick="chk()">Check</button><button class="go" onclick="retry()">Try again</button></div><div class="credit">Created by T.Badria Alfalahi</div></div>'}
+function render(){
+ const L=A.length-1;
+ document.getElementById('nav').innerHTML='<span>Progress path:</span>'+A.map((a,k)=>'<button class="'+(k===S.step?'on':'')+'" onclick="go('+k+')">'+a.n+'</button>').join('');
+ document.getElementById('stars').textContent=stars();
+ document.getElementById('pl').style.left='calc('+(S.step/L*100)+'% - '+(S.step/L*40)+'px)';
+ document.getElementById('stations').innerHTML=A.map((a,k)=>'<span class="st'+(k<=S.step?' on':'')+'" style="left:'+(k/L*100)+'%"></span>').join('');
+ document.getElementById('main').innerHTML=view()}
+render();
+</script></body></html>
